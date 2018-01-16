@@ -1,0 +1,37 @@
+package picture;
+
+import static org.junit.Assert.*;
+
+import org.junit.*;
+import picture.*;
+public class test1 {
+	private static RunAction Te=new RunAction();
+	@Before
+	public void test6() {
+		Te.Creat();
+	}
+	@Test
+	public void test2() {
+		 
+		String aim=Te.randomWalk(3,Te.graph);
+		assertEquals("new->worlds worlds->to ",aim);
+		
+	}
+	@Test
+	public void test3() {
+
+		String aim=Te.randomWalk(2,Te.graph);
+		assertEquals("strange->new ",aim);
+	}
+	@Test
+	public void test4() {
+			 
+		String aim=Te.randomWalk(9,Te.graph);
+		assertEquals("",aim);
+	}
+	@Test
+	public void test5() {
+		String aim=Te.randomWalk(0,Te.graph);
+		assertEquals("to->explore explore->strange strange->new new->worlds worlds->to to->seek seek->out out->new new->life life->and and->new new->civilizations ",aim);
+	}
+}

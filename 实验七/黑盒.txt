@@ -1,0 +1,34 @@
+package picture;
+
+import static org.junit.Assert.*;
+
+import org.junit.*;
+import picture.*;
+public class test1 {
+	private static RunAction Te=new RunAction();
+	@Before
+	public void test6() {
+		Te.Creat();
+	}
+	@Test
+	public void test() {
+		String aim=Te.queryBridgeWords("big","time",Te.graph);
+		assertEquals("The bridge words from big to time are: data ",aim);
+	}
+
+	@Test
+	public void test3() {
+	String aim=Te.queryBridgeWords("a","time",Te.graph);
+	assertEquals("No a in the graph!",aim);
+	}
+	@Test
+	public void test4() {
+	String aim=Te.queryBridgeWords("big","hello",Te.graph);
+	assertEquals("No hello in the graph!",aim);
+	}
+	@Test
+	public void test5() {
+	String aim=Te.queryBridgeWords("a","hello",Te.graph);
+	assertEquals("No a and hello in the graph!",aim);
+	}
+}
